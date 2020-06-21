@@ -1,0 +1,86 @@
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-icon {
+  margin: 10px;
+  padding-bottom: 15px;
+  display: inline-block;
+}
+
+.menu-icon i {
+  display: inline-block;
+  padding: 12px 14px;
+  padding-top: 13px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+  text-align: center;
+}
+
+.menu-icon:hover .dropdown {
+  display: block;
+}
+
+.menu-icon .dropdown {
+  display: none;
+  position: absolute;
+  padding: 10px 14px;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  background: #383b53;
+  border-radius: 10px;
+  margin-top: 5px;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.menu-icon .dropdown .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.menu-icon .dropdown .user img {
+  width: 45px;
+  background-size: cover;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.menu-icon .dropdown .user .name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.menu-icon .dropdown hr {
+  margin: 10px 0;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-icon .dropdown ul {
+  list-style-type: none;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.menu-icon .dropdown ul li:hover {
+  color: #ffffff;
+  cursor: pointer;
+}
+/*# sourceMappingURL=menu-icon.css.map */

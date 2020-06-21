@@ -1,0 +1,319 @@
+/**  Remember to import the colors! **/
+/** The font family that we are using is ClearSans **/
+@import "./colors.scss";
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: $dark-blue;
+  color: $white;
+  font-family: ClearSans, sans-serif;
+}
+
+/* ==== CODE HERE ==== */
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @import "./panel/panel.scss";
+
+  .viewer {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background-color: $white;
+    color: $dark-blue;
+    padding: 5% 7.5%;
+    margin-left: 2.5px;
+    overflow: auto;
+
+    .topper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .left {
+        .project-name {
+          font-size: 32.5px;
+          font-weight: 600;
+          color: $dark-blue;
+        }
+        p {
+          margin-top: 10px;
+          color: $text-opacity-black;
+          font-size: 15px;
+          font-weight: 600;
+        }
+      }
+      .right {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        .images {
+          display: flex;
+          .image {
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+
+            border: 3px solid #fff;
+            position: relative;
+            cursor: pointer;
+          }
+          .image:nth-child(1) {
+            background: url("../images/image_2.jpg");
+            background-size: cover;
+            left: 22px;
+            z-index: 3;
+          }
+          .image:nth-child(2) {
+            background: url("../images/image_1.jpg");
+            background-size: cover;
+            left: 11px;
+            z-index: 2;
+          }
+          .image:nth-child(3) {
+            background: url("../images/image_3.jpg");
+            background-size: cover;
+            z-index: 1;
+          }
+        }
+        .add {
+          width: 22.5px;
+          height: 22.5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $text-opacity-black;
+          border: 2px solid $text-opacity-black;
+          font-size: 15px;
+          font-weight: bold;
+          border-radius: 50%;
+          margin-left: 10px;
+          transition: 0.15s linear;
+          text-align: center;
+
+          &:hover {
+            color: $dark-blue;
+            border-color: $dark-blue;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .todo-list {
+      margin-top: 50px;
+      margin-bottom: 30px;
+
+      .dater {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .date {
+          color: $dark-blue;
+          font-size: 20px;
+          font-weight: 600;
+        }
+        i {
+          font-size: 25px;
+          color: rgba(33, 37, 63, 0.15);
+        }
+      }
+      hr {
+        margin: 20px 0;
+        border-color: rgba(33, 37, 63, 0.05);
+      }
+      .todos {
+        .todo {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 20px;
+
+          .left {
+            display: flex;
+            align-items: center;
+            i {
+              padding: 7px;
+              border-radius: 50%;
+              border: 2px solid #eee;
+              color: transparent;
+              margin-right: 15px;
+              font-size: 13px;
+            }
+            .to-do {
+              font-size: 16px;
+            }
+          }
+          .status {
+            padding: 6px 0;
+            border-radius: 999px;
+            font-size: 14px;
+            text-align: center;
+            width: 125px;
+            font-weight: 600;
+            vertical-align: center;
+            padding-top: 4px;
+            background-color: rgba(133, 144, 158, 0.2);
+            color: $grey;
+            &:before {
+              content: "Waiting";
+            }
+            &.approved {
+              background-color: rgba(56, 190, 189, 0.2);
+              color: $green;
+            }
+            &.approved:before {
+              content: "Approved";
+            }
+            &.in-progress {
+              color: $blue;
+              background-color: rgba(88, 157, 242, 0.2);
+            }
+            &.in-progress:before {
+              content: "In Progress";
+            }
+            &.in-review {
+              color: $orange;
+              background-color: rgba(241, 143, 109, 0.2);
+            }
+            &.in-review:before {
+              content: "In Review";
+            }
+          }
+          &.completed {
+            .left {
+              i {
+                background: $coral-blue;
+                border-color: transparent;
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+    .new-item {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      margin: 30px;
+      width: 50px;
+      height: 50px;
+      font-size: 19px;
+      color: $white;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: $purple;
+      box-shadow: 0px 10px 25px $purple;
+      cursor: pointer;
+      transition: 0.25s linear;
+
+      &:hover {
+        box-shadow: 0px 5px 10px $purple;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper {
+    display: block;
+    height: auto;
+    padding: 0px 0;
+
+    .viewer {
+      margin: 0 0;
+      border-radius: 0;
+      overflow: unset;
+
+      .topper {
+        flex-direction: column;
+        .left {
+          .project-name {
+            font-size: 35px;
+            margin-top: 10px;
+            text-align: center;
+          }
+          p {
+            text-align: center;
+          }
+        }
+        .right {
+          display: flex;
+          justify-content: center;
+          margin: 15px 0;
+          margin-left: -11px;
+          width: 100%;
+
+          .add {
+            display: none;
+          }
+        }
+      }
+      .todo-list {
+        margin-top: 15px;
+
+        .todos {
+          .todo {
+            .left {
+              i {
+                padding: 5px;
+              }
+            }
+            .status {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .panel {
+      min-height: 100vh;
+      .content {
+        padding: 0 30px;
+
+        .top .project-section {
+          .projects {
+            .project {
+              .color {
+                border-radius: 17.5px;
+
+                &:hover {
+                  border-radius: 20px;
+                }
+              }
+              &.active {
+                .color {
+                  border-radius: 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1225px) {
+  .wrapper {
+    .viewer {
+      .todo-list .todo .status {
+        display: none;
+      }
+    }
+  }
+}

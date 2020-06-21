@@ -1,0 +1,177 @@
+@import "../colors.scss";
+
+.projects {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  grid-gap: 40px;
+  .project {
+    width: 100%;
+    height: 100%;
+
+    .notification {
+      position: relative;
+      top: 14px;
+      left: -3px;
+
+      width: 12.5px;
+      height: 12.5px;
+      border-radius: 50%;
+      background-color: $white;
+      border: 2px solid $dark-blue;
+    }
+    .none {
+      visibility: hidden;
+    }
+    .color {
+      text-align: center;
+      transition: 0.25s linear;
+
+      border-radius: 20px;
+      font-size: 25px;
+      font-weight: 800;
+      background-size: 150%;
+      background-position: 50% 30%;
+      transition: 0.15s linear;
+      cursor: pointer;
+
+      &:hover {
+        background-size: 250%;
+      }
+      &.pink {
+        background-image: url("../images//0deg.png"), $gradient-1;
+        background-position: 50% 30%;
+      }
+      &.green {
+        background-image: url("../images/90deg.png"), $gradient-2;
+        background-position: 30% 0%;
+      }
+      &.purple {
+        background-image: url("../images/180deg.png"), $gradient-3;
+        background-position: 50% 90%;
+      }
+      &.blue {
+        background-image: url("../images/270deg.png"), $gradient-4;
+        background-position: 50% 30%;
+      }
+      &.orange {
+        background-image: url("../images/0deg.png"), $gradient-5;
+        background-position: 0% 30%;
+      }
+      &.more {
+        background: $opacity-white;
+      }
+    }
+    .color:before {
+      padding-bottom: 100%;
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .text {
+      margin-top: 20px;
+      font-size: 15px;
+      color: $text-opacity-white;
+      text-align: center;
+    }
+    &:hover {
+      .color {
+        background-clip: content-box;
+        border: 2.5px solid;
+        padding: 7.5px;
+        border-radius: 25px;
+        /*border-radius: 100px; cool effect*/
+
+        &.pink {
+          border-color: $red;
+        }
+        &.green {
+          border-color: $green;
+        }
+        &.purple {
+          border-color: $purple;
+        }
+        &.blue {
+          border-color: $blue;
+        }
+        &.orange {
+          border-color: $orange;
+        }
+        &.more {
+          border-color: $opacity-white;
+        }
+      }
+      .text {
+        &.pink {
+          color: $red;
+        }
+        &.green {
+          color: $green;
+        }
+        &.purple {
+          color: $purple;
+        }
+        &.blue {
+          color: $blue;
+        }
+        &.orange {
+          color: $orange;
+        }
+        &.more {
+          color: $opacity-white;
+        }
+      }
+      .notification {
+        visibility: hidden;
+      }
+    }
+    &.active {
+      .color {
+        background-clip: content-box;
+        border: 2.5px solid;
+        padding: 7.5px;
+        border-radius: 25px;
+
+        &.pink {
+          border-color: $red;
+        }
+        &.green {
+          border-color: $green;
+        }
+        &.purple {
+          border-color: $purple;
+        }
+        &.blue {
+          border-color: $blue;
+        }
+        &.orange {
+          border-color: $orange;
+        }
+      }
+      .text {
+        &.pink {
+          color: $red;
+        }
+        &.green {
+          color: $green;
+        }
+        &.purple {
+          color: $purple;
+        }
+        &.blue {
+          color: $blue;
+        }
+        &.orange {
+          color: $orange;
+        }
+        &.more {
+          color: $opacity-white;
+        }
+      }
+      .notification {
+        visibility: hidden;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+$coral-blue: #33dad9;
+$blue: #589df2;
+$white: #ffffff;
+$dark-blue: #21253f;
+$purple: #8a4ec7;
+$orange: #f18f6d;
+$green: #38bebd;
+$grey: #85909e;
+$red: #fa2a88;
+
+$opacity-white: rgba(
+  $color: #ffffff,
+  $alpha: 0.1,
+);
+$text-opacity-white: rgba(
+  $color: #ffffff,
+  $alpha: 0.5,
+);
+$text-opacity-black: rgba(
+  $color: #21253f,
+  $alpha: 0.3,
+);
+
+$gradient-1: linear-gradient(60deg, #fa2a88, #f938c8);
+$gradient-2: linear-gradient(60deg, #29d5a6, #3579df);
+$gradient-3: linear-gradient(60deg, #b563d2, #6439be);
+$gradient-4: linear-gradient(60deg, #6f48f1, #2cb5f0);
+$gradient-5: linear-gradient(60deg, #f7bd71, #ee7062);
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba($color: #ffffff, $alpha: 0.1);
+}

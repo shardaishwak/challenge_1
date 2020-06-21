@@ -1,0 +1,28 @@
+@import "../colors.scss";
+
+.search {
+  background: $opacity-white;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 17.5px 20px;
+  border-radius: 20px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+
+  i {
+    margin-right: 15px;
+    font-size: 15px;
+    margin-top: 4px;
+  }
+  input {
+    width: 100%;
+    font-family: ClearSans, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: $white;
+    font-weight: 600;
+  }
+}

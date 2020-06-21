@@ -1,0 +1,71 @@
+@import "../colors.scss";
+
+.menu-icon {
+  margin: 10px;
+  padding-bottom: 15px;
+
+  display: inline-block;
+
+  i {
+    display: inline-block;
+    padding: 12px 14px;
+    padding-top: 13px;
+    border-radius: 10px;
+    background-color: $opacity-white;
+    cursor: pointer;
+    transition: 0.2s linear;
+    text-align: center;
+  }
+
+  &:hover {
+    .dropdown {
+      display: block;
+    }
+  }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    padding: 10px 14px;
+    transition: 0.2s linear;
+    animation-duration: 0.2s;
+
+    background: #383b53;
+
+    border-radius: 10px;
+    margin-top: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+    .user {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      img {
+        width: 45px;
+        background-size: cover;
+        height: 45px;
+        border-radius: 50%;
+        margin-right: 15px;
+      }
+      .name {
+        font-size: 18px;
+        font-weight: 600;
+      }
+    }
+    hr {
+      margin: 10px 0;
+      border-color: $opacity-white;
+    }
+    ul {
+      list-style-type: none;
+      line-height: 1.8;
+      color: $text-opacity-white;
+
+      li:hover {
+        color: $white;
+        cursor: pointer;
+      }
+    }
+  }
+}
